@@ -15,14 +15,12 @@ sum = 0
 for n in 1..28123
   found = false
   for a in abundant
-    if found
-      next #There has to be a better way to do this.
-    end
     if a > n
       next
     end
     if abundant.include?(n-a)
       found = true
+      break
     end
   end
   if not found
